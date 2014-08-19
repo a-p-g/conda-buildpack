@@ -12,10 +12,6 @@ set -eo pipefail
 export PATH=:/usr/local/bin:$PATH
 
 
-export IBM_DB_HOME = "/home/vcap/app/.heroku/clidriver"
-export IBM_DB_LIB = "/home/vcap/app/.heroku/clidriver/lib"
-export LD_LIBRARY_PATH = "/home/vcap/app/.heroku/clidriver/lib:$LD_LIBRARY_PATH"
-
 
 
 # Paths.
@@ -97,6 +93,10 @@ set-env PATH '$HOME/.heroku/miniconda/bin:$PATH'
 set-env PYTHONUNBUFFERED true
 set-default-env LANG en_US.UTF-8
 set-default-env PYTHONHASHSEED random
+
+set-env IBM_DB_HOME '/home/vcap/app/.heroku/clidriver'
+set-env IBM_DB_LIB = '/home/vcap/app/.heroku/clidriver/lib'
+set-env LD_LIBRARY_PATH '/home/vcap/app/.heroku/clidriver/lib:$LD_LIBRARY_PATH'
 
 
 # Experimental post_compile hook.
